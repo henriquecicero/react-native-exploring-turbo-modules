@@ -35,6 +35,14 @@
     "react-test-renderer": "19.2.0",
     "typescript": "^5.8.3"
   },
+  "codegenConfig": {
+    "name": "AppSpecs",
+    "type": "modules",
+    "jsSrcsDir": "specs",
+    "android": {
+      "javaPackageName": "com.sampleapp.specs"
+    }
+  },
   "engines": {
     "node": ">=20"
   }
