@@ -6,6 +6,8 @@ import SampleTurboModule from './NativeSampleModule';
 function App(): React.JSX.Element {
   const [value, setValue] = React.useState('');
   const [reversedValue, setReversedValue] = React.useState('');
+  const [cubicSource, setCubicSource] = React.useState('');
+  const [cubicRoot, setCubicRoot] = React.useState(0);
 
   const onPress = () => {
     const revString = SampleTurboModule.reverseString(value);
@@ -27,6 +29,18 @@ function App(): React.JSX.Element {
         />
         <Button title="Reverse" onPress={onPress} />
         <Text>Reversed text: {reversedValue}</Text>
+        <Text>For which number do you want to compute the Cubic Root?</Text>
+        <TextInput
+          style={styles.textInput}
+          placeholder="Write your text here"
+          onChangeText={setCubicSource}
+          value={cubicSource}
+        />
+        <Button
+          title="Get Cubic Root"
+          onPress={() => setCubicRoot(SampleTurboModule.cubicRoot(cubicSource))}
+        />
+        <Text>The cubic root is: {cubicRoot}</Text>
       </View>
     </SafeAreaView>
   );

@@ -9,6 +9,13 @@ const NativeSampleModule = {
     const sanitized = value.trim();
     return NativeSampleModuleSpec.reverseString(sanitized);
   },
+  cubicRoot(value: string) {
+    const num = parseInt(value, 10);
+    if (isNaN(num)) {
+      throw new Error('Input must be a valid number string');
+    }
+    return NativeSampleModuleSpec.cubicRoot(value);
+  },
 };
 
 export default NativeSampleModule;

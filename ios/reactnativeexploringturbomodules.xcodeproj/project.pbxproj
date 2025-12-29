@@ -25,6 +25,7 @@
 		1DCC84682F028F5200DE1FAD /* NativeSampleModule.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NativeSampleModule.cpp; sourceTree = "<group>"; };
 		1DCC846B2F028FB100DE1FAD /* SampleNativeModuleProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleNativeModuleProvider.h; sourceTree = "<group>"; };
 		1DCC846C2F028FB100DE1FAD /* SampleNativeModuleProvider.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SampleNativeModuleProvider.mm; sourceTree = "<group>"; };
+		1DD82BA12F032CE4001CBF71 /* Int64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Int64.h; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-reactnativeexploringturbomodules.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactnativeexploringturbomodules.debug.xcconfig"; path = "Target Support Files/Pods-reactnativeexploringturbomodules/Pods-reactnativeexploringturbomodules.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-reactnativeexploringturbomodules.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactnativeexploringturbomodules.release.xcconfig"; path = "Target Support Files/Pods-reactnativeexploringturbomodules/Pods-reactnativeexploringturbomodules.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-reactnativeexploringturbomodules.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reactnativeexploringturbomodules.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +61,7 @@
 		1DCC84692F028F5200DE1FAD /* shared */ = {
 			isa = PBXGroup;
 			children = (
+				1DD82BA12F032CE4001CBF71 /* Int64.h */,
 				1DCC84672F028F5200DE1FAD /* NativeSampleModule.h */,
 				1DCC84682F028F5200DE1FAD /* NativeSampleModule.cpp */,
 			);
