@@ -41,6 +41,11 @@
     "jsSrcsDir": "specs",
     "android": {
       "javaPackageName": "com.sampleapp.specs"
+    },
+    "ios": {
+      "modulesProvider": {
+        "NativeSampleModule": "SampleNativeModuleProvider"
+      }
     }
   },
   "engines": {
