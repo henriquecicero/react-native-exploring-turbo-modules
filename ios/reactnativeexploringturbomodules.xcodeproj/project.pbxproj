@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C80B921A6F3F58F76C31292 /* libPods-reactnativeexploringturbomodules.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-reactnativeexploringturbomodules.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		1DBBFFC72F03D8E800826BF0 /* NativeLocalStorageProvider.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DBBFFC62F03D8E800826BF0 /* NativeLocalStorageProvider.mm */; };
 		1DCC846A2F028F5200DE1FAD /* NativeSampleModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DCC84682F028F5200DE1FAD /* NativeSampleModule.cpp */; };
 		1DCC846D2F028FB100DE1FAD /* SampleNativeModuleProvider.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DCC846C2F028FB100DE1FAD /* SampleNativeModuleProvider.mm */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
@@ -21,6 +22,8 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = reactnativeexploringturbomodules/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = reactnativeexploringturbomodules/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = reactnativeexploringturbomodules/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		1DBBFFC52F03D8E800826BF0 /* NativeLocalStorageProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeLocalStorageProvider.h; sourceTree = "<group>"; };
+		1DBBFFC62F03D8E800826BF0 /* NativeLocalStorageProvider.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NativeLocalStorageProvider.mm; sourceTree = "<group>"; };
 		1DCC84672F028F5200DE1FAD /* NativeSampleModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeSampleModule.h; sourceTree = "<group>"; };
 		1DCC84682F028F5200DE1FAD /* NativeSampleModule.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NativeSampleModule.cpp; sourceTree = "<group>"; };
 		1DCC846B2F028FB100DE1FAD /* SampleNativeModuleProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleNativeModuleProvider.h; sourceTree = "<group>"; };
@@ -88,6 +91,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				1DBBFFC52F03D8E800826BF0 /* NativeLocalStorageProvider.h */,
+				1DBBFFC62F03D8E800826BF0 /* NativeLocalStorageProvider.mm */,
 				1DCC846B2F028FB100DE1FAD /* SampleNativeModuleProvider.h */,
 				1DCC846C2F028FB100DE1FAD /* SampleNativeModuleProvider.mm */,
 				1DCC84692F028F5200DE1FAD /* shared */,
@@ -268,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DCC846A2F028F5200DE1FAD /* NativeSampleModule.cpp in Sources */,
+				1DBBFFC72F03D8E800826BF0 /* NativeLocalStorageProvider.mm in Sources */,
 				1DCC846D2F028FB100DE1FAD /* SampleNativeModuleProvider.mm in Sources */,
 				761780ED2CA45674006654EE /* AppDelegate.swift in Sources */,
 			);

@@ -43,7 +43,8 @@
     },
     "ios": {
       "modulesProvider": {
-        "NativeSampleModule": "SampleNativeModuleProvider"
+        "NativeSampleModule": "SampleNativeModuleProvider",
+        "NativeLocalStorage": "NativeLocalStorageProvider"
       }
     }
   },
