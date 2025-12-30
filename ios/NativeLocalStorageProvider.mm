@@ -25,7 +25,16 @@ static NSString *const NativeLocalStorageProviderKey = @"local-storage";
 
 - (void)setItem:(NSString *)value
             key:(NSString *)key {
+  BOOL shouldEmitEvent = NO;
+  if (![self getItem:key]) {
+    shouldEmitEvent = YES;
+  }
+  
   [self.localStorage setObject:value forKey:key];
+  if (shouldEmitEvent) {
+    [self emitOnKeyAdded:@{@"key": key, @"value": value}];
+  }
+  
 }
 
 - (void)removeItem:(NSString *)key {

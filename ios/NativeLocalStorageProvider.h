@@ -3,7 +3,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NativeLocalStorageProvider : NSObject <NativeLocalStorageSpec>
+@interface NativeLocalStorageProvider : NativeLocalStorageSpecBase <NativeLocalStorageSpec>
 
 @end
 

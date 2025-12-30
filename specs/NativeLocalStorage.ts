@@ -1,5 +1,10 @@
-import type { TurboModule } from 'react-native';
+import type { CodegenTypes, TurboModule } from 'react-native';
 import { TurboModuleRegistry } from 'react-native';
+
+export type KeyValuePair = {
+  key: string;
+  value: string;
+};
 
 export interface Spec extends TurboModule {
   /**
@@ -26,6 +31,8 @@ export interface Spec extends TurboModule {
    * Equivalent to localStorage.clear().
    */
   clear(): void;
+
+  readonly onKeyAdded: CodegenTypes.EventEmitter<KeyValuePair>;
 }
 
 export default TurboModuleRegistry.getEnforcing<Spec>('NativeLocalStorage');
