@@ -1,10 +1,3 @@
-//
-//  SampleNativeModuleProvider.h
-//  reactnativeexploringturbomodules
-//
-//  Created by Henrique Cícero on 29/12/2025.
-//
-
 #import <Foundation/Foundation.h>
 #import <ReactCommon/RCTTurboModule.h>
 
