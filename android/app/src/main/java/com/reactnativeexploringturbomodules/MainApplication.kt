@@ -9,6 +9,7 @@ import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.sampleapp.specs.NativeLocalStoragePackage
 import com.sampleapp.specs.NativeWebViewPackage
 import com.sampleapp.specs.NativeCounterViewPackage
+import com.sampleapp.specs.NativePDFViewPackage
 
 class MainApplication : Application(), ReactApplication {
 
@@ -20,6 +21,7 @@ class MainApplication : Application(), ReactApplication {
                     add(NativeLocalStoragePackage())
                     add(NativeWebViewPackage())
                     add(NativeCounterViewPackage())
+                    add(NativePDFViewPackage())
                 },
         )
     }

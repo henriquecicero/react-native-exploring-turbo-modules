@@ -11,6 +11,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		1D006C9F2F0562E000267DCD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D006C9E2F0562E000267DCD /* WebKit.framework */; };
 		1D2F64A92F05576E007A47C8 /* RCTNativeWebView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D2F64A82F05576E007A47C8 /* RCTNativeWebView.mm */; };
+		1D7A11AC2F12345600ABC003 /* RCTNativePDFView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D7A11AB2F12345600ABC002 /* RCTNativePDFView.mm */; };
+		1D7A11AE2F12345600ABC005 /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D7A11AD2F12345600ABC004 /* PDFKit.framework */; };
 		1D9A1F2D2F12345600ABCDF1 /* RCTNativeCounterView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D9A1F2C2F12345600ABCDF0 /* RCTNativeCounterView.mm */; };
 		1DBBFFC72F03D8E800826BF0 /* NativeLocalStorageProvider.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DBBFFC62F03D8E800826BF0 /* NativeLocalStorageProvider.mm */; };
 		1DCC846A2F028F5200DE1FAD /* NativeSampleModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DCC84682F028F5200DE1FAD /* NativeSampleModule.cpp */; };
@@ -28,6 +30,9 @@
 		1D006C9E2F0562E000267DCD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		1D2F64A72F05576E007A47C8 /* RCTNativeWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTNativeWebView.h; sourceTree = "<group>"; };
 		1D2F64A82F05576E007A47C8 /* RCTNativeWebView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTNativeWebView.mm; sourceTree = "<group>"; };
+		1D7A11AA2F12345600ABC001 /* RCTNativePDFView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTNativePDFView.h; sourceTree = "<group>"; };
+		1D7A11AB2F12345600ABC002 /* RCTNativePDFView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTNativePDFView.mm; sourceTree = "<group>"; };
+		1D7A11AD2F12345600ABC004 /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
 		1D9A1F2B2F12345600ABCDEF /* RCTNativeCounterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTNativeCounterView.h; sourceTree = "<group>"; };
 		1D9A1F2C2F12345600ABCDF0 /* RCTNativeCounterView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTNativeCounterView.mm; sourceTree = "<group>"; };
 		1DBBFFC52F03D8E800826BF0 /* NativeLocalStorageProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeLocalStorageProvider.h; sourceTree = "<group>"; };
@@ -50,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D7A11AE2F12345600ABC005 /* PDFKit.framework in Frameworks */,
 				1D006C9F2F0562E000267DCD /* WebKit.framework in Frameworks */,
 				0C80B921A6F3F58F76C31292 /* libPods-reactnativeexploringturbomodules.a in Frameworks */,
 			);
@@ -84,6 +90,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D7A11AD2F12345600ABC004 /* PDFKit.framework */,
 				1D006C9E2F0562E000267DCD /* WebKit.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				5DCACB8F33CDC322A6C60F78 /* libPods-reactnativeexploringturbomodules.a */,
@@ -103,6 +110,8 @@
 			children = (
 				1D9A1F2B2F12345600ABCDEF /* RCTNativeCounterView.h */,
 				1D9A1F2C2F12345600ABCDF0 /* RCTNativeCounterView.mm */,
+				1D7A11AA2F12345600ABC001 /* RCTNativePDFView.h */,
+				1D7A11AB2F12345600ABC002 /* RCTNativePDFView.mm */,
 				1D2F64A72F05576E007A47C8 /* RCTNativeWebView.h */,
 				1D2F64A82F05576E007A47C8 /* RCTNativeWebView.mm */,
 				1DBBFFC52F03D8E800826BF0 /* NativeLocalStorageProvider.h */,
@@ -288,6 +297,7 @@
 			files = (
 				1DCC846A2F028F5200DE1FAD /* NativeSampleModule.cpp in Sources */,
 				1D9A1F2D2F12345600ABCDF1 /* RCTNativeCounterView.mm in Sources */,
+				1D7A11AC2F12345600ABC003 /* RCTNativePDFView.mm in Sources */,
 				1D2F64A92F05576E007A47C8 /* RCTNativeWebView.mm in Sources */,
 				1DBBFFC72F03D8E800826BF0 /* NativeLocalStorageProvider.mm in Sources */,
 				1DCC846D2F028FB100DE1FAD /* SampleNativeModuleProvider.mm in Sources */,
@@ -304,10 +314,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9DUHPMPUPR;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = reactnativeexploringturbomodules/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -321,6 +334,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = reactnativeexploringturbomodules;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -333,9 +347,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9DUHPMPUPR;
 				INFOPLIST_FILE = reactnativeexploringturbomodules/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -349,6 +366,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = reactnativeexploringturbomodules;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

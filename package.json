@@ -48,7 +48,8 @@
       },
       "componentProvider": {
         "NativeWebView": "RCTNativeWebView",
-        "NativeCounterView": "RCTNativeCounterView"
+        "NativeCounterView": "RCTNativeCounterView",
+        "NativePDFView": "RCTNativePDFView"
       }
     }
   },
