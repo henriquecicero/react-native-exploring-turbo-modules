@@ -1,12 +1,14 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
-import { CounterView } from './components/CounterView';
-import Divider from './components/Divider';
-import LocalStorageView from './components/LocalStorageView';
-import PDFView from './components/PDFView';
-import SampleModuleView from './components/SampleModuleView';
+import {
+  CounterView,
+  Divider,
+  LocalStorageView,
+  PDFView,
+  SampleModuleView,
+} from './components';
 
 function App(): React.JSX.Element {
   return (
@@ -16,12 +18,10 @@ function App(): React.JSX.Element {
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
         >
-          <View>
-            <Text style={styles.title}>
-              Welcome to Turbo Native Modules Example
-            </Text>
-            <SampleModuleView />
-          </View>
+          <Text style={styles.title}>
+            Welcome to Turbo Native Modules Example
+          </Text>
+          <SampleModuleView />
           <Divider size={24} />
           <LocalStorageView />
           <Divider size={24} />
