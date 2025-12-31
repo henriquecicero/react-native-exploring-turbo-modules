@@ -47,7 +47,8 @@
         "NativeLocalStorage": "NativeLocalStorageProvider"
       },
       "componentProvider": {
-        "NativeWebView": "RCTNativeWebView"
+        "NativeWebView": "RCTNativeWebView",
+        "NativeCounterView": "RCTNativeCounterView"
       }
     }
   },

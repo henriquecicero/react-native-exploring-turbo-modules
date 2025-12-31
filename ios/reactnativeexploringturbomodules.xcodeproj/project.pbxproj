@@ -11,6 +11,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		1D006C9F2F0562E000267DCD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D006C9E2F0562E000267DCD /* WebKit.framework */; };
 		1D2F64A92F05576E007A47C8 /* RCTNativeWebView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D2F64A82F05576E007A47C8 /* RCTNativeWebView.mm */; };
+		1D9A1F2D2F12345600ABCDF1 /* RCTNativeCounterView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D9A1F2C2F12345600ABCDF0 /* RCTNativeCounterView.mm */; };
 		1DBBFFC72F03D8E800826BF0 /* NativeLocalStorageProvider.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DBBFFC62F03D8E800826BF0 /* NativeLocalStorageProvider.mm */; };
 		1DCC846A2F028F5200DE1FAD /* NativeSampleModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DCC84682F028F5200DE1FAD /* NativeSampleModule.cpp */; };
 		1DCC846D2F028FB100DE1FAD /* SampleNativeModuleProvider.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DCC846C2F028FB100DE1FAD /* SampleNativeModuleProvider.mm */; };
@@ -27,6 +28,8 @@
 		1D006C9E2F0562E000267DCD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		1D2F64A72F05576E007A47C8 /* RCTNativeWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTNativeWebView.h; sourceTree = "<group>"; };
 		1D2F64A82F05576E007A47C8 /* RCTNativeWebView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTNativeWebView.mm; sourceTree = "<group>"; };
+		1D9A1F2B2F12345600ABCDEF /* RCTNativeCounterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTNativeCounterView.h; sourceTree = "<group>"; };
+		1D9A1F2C2F12345600ABCDF0 /* RCTNativeCounterView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTNativeCounterView.mm; sourceTree = "<group>"; };
 		1DBBFFC52F03D8E800826BF0 /* NativeLocalStorageProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeLocalStorageProvider.h; sourceTree = "<group>"; };
 		1DBBFFC62F03D8E800826BF0 /* NativeLocalStorageProvider.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NativeLocalStorageProvider.mm; sourceTree = "<group>"; };
 		1DCC84672F028F5200DE1FAD /* NativeSampleModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeSampleModule.h; sourceTree = "<group>"; };
@@ -98,6 +101,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				1D9A1F2B2F12345600ABCDEF /* RCTNativeCounterView.h */,
+				1D9A1F2C2F12345600ABCDF0 /* RCTNativeCounterView.mm */,
 				1D2F64A72F05576E007A47C8 /* RCTNativeWebView.h */,
 				1D2F64A82F05576E007A47C8 /* RCTNativeWebView.mm */,
 				1DBBFFC52F03D8E800826BF0 /* NativeLocalStorageProvider.h */,
@@ -282,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DCC846A2F028F5200DE1FAD /* NativeSampleModule.cpp in Sources */,
+				1D9A1F2D2F12345600ABCDF1 /* RCTNativeCounterView.mm in Sources */,
 				1D2F64A92F05576E007A47C8 /* RCTNativeWebView.mm in Sources */,
 				1DBBFFC72F03D8E800826BF0 /* NativeLocalStorageProvider.mm in Sources */,
 				1DCC846D2F028FB100DE1FAD /* SampleNativeModuleProvider.mm in Sources */,

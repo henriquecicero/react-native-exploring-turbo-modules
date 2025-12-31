@@ -10,6 +10,7 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { CounterView } from './CounterView';
 import Divider from './Divider';
 import NativeLocalStorage from './specs/NativeLocalStorage';
 import NativeSampleModule from './specs/NativeSampleModule';
@@ -172,6 +173,8 @@ function App(): React.JSX.Element {
           <Button title="Retrieve" onPress={retrieveValue} />
           <Button title="Delete" onPress={deleteValue} />
           <Button title="Clear" onPress={clearAll} />
+          <Divider size={24} />
+          <CounterView />
         </ScrollView>
       </SafeAreaView>
     </SafeAreaProvider>
