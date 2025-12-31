@@ -9,7 +9,7 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Divider from './Divider';
 import NativeLocalStorage from './specs/NativeLocalStorage';
 import NativeSampleModule from './specs/NativeSampleModule';
@@ -96,86 +96,85 @@ function App(): React.JSX.Element {
   };
 
   return (
-    <SafeAreaView
-      edges={['top', 'bottom', 'left', 'right']}
-      style={styles.container}
-    >
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        showsHorizontalScrollIndicator={false}
-      >
-        <View>
-          <Text style={styles.title}>
-            Welcome to Turbo Native Modules Example
-          </Text>
-          <Text>Write down here the text you want to reverse</Text>
-          <TextInput
-            style={styles.textInput}
-            placeholder="Write your text here"
-            onChangeText={setValue}
-            value={value}
-          />
-          <Button title="Reverse" onPress={onPress} />
-          <Text>Reversed text: {reversedValue}</Text>
-          <Divider size={24} />
-          <Text>For which number do you want to compute the Cubic Root?</Text>
-          <TextInput
-            style={styles.textInput}
-            placeholder="Write your text here"
-            onChangeText={setCubicSource}
-            value={cubicSource}
-          />
-          <Button
-            title="Get Cubic Root"
-            onPress={() =>
-              setCubicRoot(NativeSampleModule.cubicRoot(cubicSource))
-            }
-          />
-          <Text>The cubic root is: {cubicRoot}</Text>
-          <Divider size={24} />
-          <Text>Address:</Text>
-          <TextInput
-            style={styles.textInput}
-            placeholder="Write your address here"
-            onChangeText={setStreet}
-            value={street}
-          />
-          <Text>Number:</Text>
-          <TextInput
-            style={styles.textInput}
-            placeholder="Write your address here"
-            onChangeText={setNum}
-            value={num}
-          />
-          <Button title="Validate" onPress={onPressValidateAddress} />
-          {isValidAddress != null && (
-            <Text>
-              Your address is {isValidAddress ? 'valid' : 'not valid'}
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
+        >
+          <View>
+            <Text style={styles.title}>
+              Welcome to Turbo Native Modules Example
             </Text>
-          )}
-        </View>
-        <Divider size={24} />
-        <Text style={styles.text}>
-          Current stored value is: {valueLocalStorage ?? 'No Value'}
-        </Text>
-        <Text>Key:</Text>
-        <TextInput
-          placeholder="Enter the key you want to store"
-          style={styles.textInput}
-          onChangeText={setKey}
-        />
-        <Text>Value:</Text>
-        <TextInput
-          placeholder="Enter the text you want to store"
-          style={styles.textInput}
-          onChangeText={setEditingValue}
-        />
-        <Button title="Save" onPress={saveValue} />
-        <Button title="Retrieve" onPress={retrieveValue} />
-        <Button title="Delete" onPress={deleteValue} />
-        <Button title="Clear" onPress={clearAll} />
-      </ScrollView>
-    </SafeAreaView>
+            <Text>Write down here the text you want to reverse</Text>
+            <TextInput
+              style={styles.textInput}
+              placeholder="Write your text here"
+              onChangeText={setValue}
+              value={value}
+            />
+            <Button title="Reverse" onPress={onPress} />
+            <Text>Reversed text: {reversedValue}</Text>
+            <Divider size={24} />
+            <Text>For which number do you want to compute the Cubic Root?</Text>
+            <TextInput
+              style={styles.textInput}
+              placeholder="Write your text here"
+              onChangeText={setCubicSource}
+              value={cubicSource}
+            />
+            <Button
+              title="Get Cubic Root"
+              onPress={() =>
+                setCubicRoot(NativeSampleModule.cubicRoot(cubicSource))
+              }
+            />
+            <Text>The cubic root is: {cubicRoot}</Text>
+            <Divider size={24} />
+            <Text>Address:</Text>
+            <TextInput
+              style={styles.textInput}
+              placeholder="Write your address here"
+              onChangeText={setStreet}
+              value={street}
+            />
+            <Text>Number:</Text>
+            <TextInput
+              style={styles.textInput}
+              placeholder="Write your address here"
+              onChangeText={setNum}
+              value={num}
+            />
+            <Button title="Validate" onPress={onPressValidateAddress} />
+            {isValidAddress != null && (
+              <Text>
+                Your address is {isValidAddress ? 'valid' : 'not valid'}
+              </Text>
+            )}
+          </View>
+          <Divider size={24} />
+          <Text style={styles.text}>
+            Current stored value is: {valueLocalStorage ?? 'No Value'}
+          </Text>
+          <Text>Key:</Text>
+          <TextInput
+            placeholder="Enter the key you want to store"
+            style={styles.textInput}
+            onChangeText={setKey}
+          />
+          <Text>Value:</Text>
+          <TextInput
+            placeholder="Enter the text you want to store"
+            style={styles.textInput}
+            onChangeText={setEditingValue}
+          />
+          <Button title="Save" onPress={saveValue} />
+          <Button title="Retrieve" onPress={retrieveValue} />
+          <Button title="Delete" onPress={deleteValue} />
+          <Button title="Clear" onPress={clearAll} />
+        </ScrollView>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
