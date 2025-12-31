@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   counter: {
-    width: '90%',
+    width: '100%',
     height: 80,
     borderRadius: 12,
     borderWidth: 1,
