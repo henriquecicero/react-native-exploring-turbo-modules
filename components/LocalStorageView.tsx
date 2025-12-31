@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  View,
   type EventSubscription,
 } from 'react-native';
 
@@ -81,10 +82,18 @@ function LocalStorageView(): React.JSX.Element {
         style={styles.textInput}
         onChangeText={setEditingValue}
       />
-      <Button title="Save" onPress={saveValue} />
-      <Button title="Retrieve" onPress={retrieveValue} />
-      <Button title="Delete" onPress={deleteValue} />
-      <Button title="Clear" onPress={clearAll} />
+      <View style={styles.buttonSpacing}>
+        <Button title="Save" onPress={saveValue} />
+      </View>
+      <View style={styles.buttonSpacing}>
+        <Button title="Retrieve" onPress={retrieveValue} />
+      </View>
+      <View style={styles.buttonSpacing}>
+        <Button title="Delete" onPress={deleteValue} />
+      </View>
+      <View style={styles.buttonSpacing}>
+        <Button title="Clear" onPress={clearAll} />
+      </View>
     </>
   );
 }
@@ -101,6 +110,9 @@ const styles = StyleSheet.create({
   text: {
     marginTop: 10,
     fontSize: 20,
+  },
+  buttonSpacing: {
+    marginBottom: 10,
   },
 });
 
