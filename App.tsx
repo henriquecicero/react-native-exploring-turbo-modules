@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginHorizontal: 20,
+    paddingHorizontal: 20,
+    backgroundColor: '#fff',
   },
   title: {
     fontSize: 18,
