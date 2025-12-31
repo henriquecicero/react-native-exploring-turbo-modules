@@ -1,5 +1,5 @@
 import { Alert, StyleSheet, View } from 'react-native';
-import NativeWebView from './specs/NativeWebView';
+import NativeWebView from '../specs/NativeWebView';
 
 export const WebView = () => {
   return (

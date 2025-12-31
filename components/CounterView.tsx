@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import NativeCounterView from './specs/NativeCounterView';
+import NativeCounterView from '../specs/NativeCounterView';
 
 export const CounterView = () => {
   const [count, setCount] = React.useState(0);

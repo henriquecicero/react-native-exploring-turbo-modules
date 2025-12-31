@@ -10,10 +10,11 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { CounterView } from './CounterView';
-import Divider from './Divider';
+
+import { CounterView } from './components/CounterView';
+import Divider from './components/Divider';
+import PDFView from './components/PDFView';
 import NativeLocalStorage from './specs/NativeLocalStorage';
-import NativePDFView from './specs/NativePDFView';
 import NativeSampleModule from './specs/NativeSampleModule';
 
 const EMPTY = '<empty>';
@@ -33,10 +34,7 @@ function App(): React.JSX.Element {
   >(null);
   const [editingValue, setEditingValue] = React.useState<string | null>(null);
   const [key, setKey] = React.useState<string | null>(null);
-  const [pdfPage, setPdfPage] = React.useState(0);
-  const [pdfPageCount, setPdfPageCount] = React.useState(0);
   const listenerSubscription = React.useRef<null | EventSubscription>(null);
-  const pdfSource = 'https://www.irs.gov/pub/irs-pdf/fw4.pdf';
 
   React.useEffect(() => {
     listenerSubscription.current = NativeLocalStorage?.onKeyAdded(pair =>
@@ -180,44 +178,7 @@ function App(): React.JSX.Element {
           <Divider size={24} />
           <CounterView />
           <Divider size={24} />
-          <View>
-            <Text style={styles.sectionTitle}>Native PDF</Text>
-            <Text style={styles.caption}>
-              Page: {pdfPage + 1} / {pdfPageCount || '...'}
-            </Text>
-            <View style={styles.pdfControls}>
-              <Button
-                title="Prev"
-                onPress={() => setPdfPage(Math.max(0, pdfPage - 1))}
-              />
-              <Button
-                title="Next"
-                onPress={() =>
-                  setPdfPage(
-                    pdfPageCount > 0
-                      ? Math.min(pdfPageCount - 1, pdfPage + 1)
-                      : pdfPage + 1,
-                  )
-                }
-              />
-            </View>
-            <NativePDFView
-              style={styles.pdfView}
-              sourceURL={pdfSource}
-              page={pdfPage}
-              pagingEnabled={true}
-              onLoad={event => {
-                setPdfPageCount(event.nativeEvent.pageCount);
-                setPdfPage(event.nativeEvent.page);
-              }}
-              onPageChanged={event => {
-                setPdfPage(event.nativeEvent.page);
-              }}
-              onError={event => {
-                Alert.alert('PDF Error', event.nativeEvent.message);
-              }}
-            />
-          </View>
+          <PDFView />
         </ScrollView>
       </SafeAreaView>
     </SafeAreaProvider>
@@ -247,28 +208,6 @@ const styles = StyleSheet.create({
   text: {
     marginTop: 10,
     fontSize: 20,
-  },
-  sectionTitle: {
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  caption: {
-    marginTop: 6,
-    marginBottom: 8,
-  },
-  pdfControls: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 8,
-  },
-  pdfView: {
-    width: '100%',
-    height: 360,
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: '#222',
-    overflow: 'hidden',
   },
 });
 
