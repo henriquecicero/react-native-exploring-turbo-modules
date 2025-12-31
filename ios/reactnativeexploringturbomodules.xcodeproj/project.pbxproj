@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0C80B921A6F3F58F76C31292 /* libPods-reactnativeexploringturbomodules.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-reactnativeexploringturbomodules.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		1D006C9F2F0562E000267DCD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D006C9E2F0562E000267DCD /* WebKit.framework */; };
+		1D2F64A92F05576E007A47C8 /* RCTNativeWebView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D2F64A82F05576E007A47C8 /* RCTNativeWebView.mm */; };
 		1DBBFFC72F03D8E800826BF0 /* NativeLocalStorageProvider.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DBBFFC62F03D8E800826BF0 /* NativeLocalStorageProvider.mm */; };
 		1DCC846A2F028F5200DE1FAD /* NativeSampleModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DCC84682F028F5200DE1FAD /* NativeSampleModule.cpp */; };
 		1DCC846D2F028FB100DE1FAD /* SampleNativeModuleProvider.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DCC846C2F028FB100DE1FAD /* SampleNativeModuleProvider.mm */; };
@@ -22,6 +24,9 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = reactnativeexploringturbomodules/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = reactnativeexploringturbomodules/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = reactnativeexploringturbomodules/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		1D006C9E2F0562E000267DCD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		1D2F64A72F05576E007A47C8 /* RCTNativeWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTNativeWebView.h; sourceTree = "<group>"; };
+		1D2F64A82F05576E007A47C8 /* RCTNativeWebView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTNativeWebView.mm; sourceTree = "<group>"; };
 		1DBBFFC52F03D8E800826BF0 /* NativeLocalStorageProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeLocalStorageProvider.h; sourceTree = "<group>"; };
 		1DBBFFC62F03D8E800826BF0 /* NativeLocalStorageProvider.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NativeLocalStorageProvider.mm; sourceTree = "<group>"; };
 		1DCC84672F028F5200DE1FAD /* NativeSampleModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeSampleModule.h; sourceTree = "<group>"; };
@@ -42,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D006C9F2F0562E000267DCD /* WebKit.framework in Frameworks */,
 				0C80B921A6F3F58F76C31292 /* libPods-reactnativeexploringturbomodules.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +81,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D006C9E2F0562E000267DCD /* WebKit.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				5DCACB8F33CDC322A6C60F78 /* libPods-reactnativeexploringturbomodules.a */,
 			);
@@ -91,6 +98,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				1D2F64A72F05576E007A47C8 /* RCTNativeWebView.h */,
+				1D2F64A82F05576E007A47C8 /* RCTNativeWebView.mm */,
 				1DBBFFC52F03D8E800826BF0 /* NativeLocalStorageProvider.h */,
 				1DBBFFC62F03D8E800826BF0 /* NativeLocalStorageProvider.mm */,
 				1DCC846B2F028FB100DE1FAD /* SampleNativeModuleProvider.h */,
@@ -273,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DCC846A2F028F5200DE1FAD /* NativeSampleModule.cpp in Sources */,
+				1D2F64A92F05576E007A47C8 /* RCTNativeWebView.mm in Sources */,
 				1DBBFFC72F03D8E800826BF0 /* NativeLocalStorageProvider.mm in Sources */,
 				1DCC846D2F028FB100DE1FAD /* SampleNativeModuleProvider.mm in Sources */,
 				761780ED2CA45674006654EE /* AppDelegate.swift in Sources */,

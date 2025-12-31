@@ -36,7 +36,7 @@
   },
   "codegenConfig": {
     "name": "AppSpecs",
-    "type": "modules",
+    "type": "all",
     "jsSrcsDir": "specs",
     "android": {
       "javaPackageName": "com.sampleapp.specs"
@@ -45,6 +45,9 @@
       "modulesProvider": {
         "NativeSampleModule": "SampleNativeModuleProvider",
         "NativeLocalStorage": "NativeLocalStorageProvider"
+      },
+      "componentProvider": {
+        "NativeWebView": "RCTNativeWebView"
       }
     }
   },
