@@ -53,4 +53,12 @@ static NSString *const NativeLocalStorageProviderKey = @"local-storage";
   return @"NativeLocalStorage";
 }
 
+- (void)initialize { 
+  NSLog(@"initializing %@", NativeLocalStorageProviderKey);
+}
+
+- (void)invalidate { 
+  NSLog(@"invalidating %@", NativeLocalStorageProviderKey);
+}
+
 @end

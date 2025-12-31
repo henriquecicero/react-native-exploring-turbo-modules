@@ -1,6 +1,7 @@
 package com.sampleapp.specs
 
 import android.content.Context
+import android.util.Log
 import androidx.core.content.edit
 import com.facebook.react.bridge.Arguments
 import com.facebook.react.bridge.ReactApplicationContext
@@ -37,6 +38,16 @@ class NativeLocalStorageModule(
 
     override fun clear() {
         prefs.edit { clear() }
+    }
+
+    override fun initialize() {
+        super.initialize()
+        Log.i(NAME, "initializing")
+    }
+
+    override fun invalidate() {
+        super.invalidate()
+        Log.i(NAME, "invalidating")
     }
 
     companion object {
