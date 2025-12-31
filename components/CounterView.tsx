@@ -29,15 +29,14 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 16,
     marginBottom: 8,
+    color: 'black',
   },
   counter: {
     width: '100%',
     height: 80,
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: '#222',
   },
   caption: {
     marginTop: 8,
+    color: 'black',
   },
 });

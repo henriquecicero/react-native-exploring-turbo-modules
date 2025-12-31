@@ -1,6 +1,9 @@
 package com.sampleapp.specs
 
 import android.content.Context
+import android.content.res.Resources
+import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
 import android.view.Gravity
 import android.view.ViewGroup.LayoutParams
@@ -34,6 +37,12 @@ class NativeCounterView : AppCompatTextView {
         layoutParams = LayoutParams(MATCH_PARENT, MATCH_PARENT)
         gravity = Gravity.CENTER
         textSize = 16f
+        setTextColor(Color.BLACK)
+        background = GradientDrawable().apply {
+            setColor(Color.WHITE)
+            setStroke(dpToPx(2f), Color.BLACK)
+            cornerRadius = dpToPx(12f).toFloat()
+        }
         isClickable = true
         updateText()
         setOnClickListener {
@@ -73,5 +82,9 @@ class NativeCounterView : AppCompatTextView {
     ) : Event<OnPressEvent>(surfaceId, viewId) {
         override fun getEventName() = "onPress"
         override fun getEventData() = payload
+    }
+
+    private fun dpToPx(dp: Float): Int {
+        return (dp * Resources.getSystem().displayMetrics.density).toInt()
     }
 }

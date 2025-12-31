@@ -22,7 +22,9 @@ using namespace facebook::react;
     _labelView.textAlignment = NSTextAlignmentCenter;
     _labelView.numberOfLines = 1;
     _labelView.font = [UIFont systemFontOfSize:16 weight:UIFontWeightSemibold];
+    _labelView.textColor = UIColor.blackColor;
     [self addSubview:_labelView];
+    self.backgroundColor = UIColor.whiteColor;
 
     UITapGestureRecognizer *tap =
       [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap)];
@@ -79,6 +81,11 @@ using namespace facebook::react;
 {
   [super layoutSubviews];
   _labelView.frame = self.bounds;
+
+  self.layer.borderColor = UIColor.blackColor.CGColor;
+  self.layer.borderWidth = 2.0;
+  self.layer.cornerRadius = 12.0;
+  self.layer.masksToBounds = true;
 }
 
 + (ComponentDescriptorProvider)componentDescriptorProvider
