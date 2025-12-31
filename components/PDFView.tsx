@@ -53,7 +53,7 @@ function PDFView({
 
   return (
     <View style={[styles.container, style]}>
-      <Text style={styles.sectionTitle}>Native PDF</Text>
+      <Text>Native PDF</Text>
       <Text style={styles.caption}>
         Page: {page + 1} / {pageCount || '...'}
       </Text>
@@ -76,10 +76,6 @@ function PDFView({
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-  },
-  sectionTitle: {
-    fontSize: 16,
-    fontWeight: '600',
   },
   caption: {
     marginTop: 6,

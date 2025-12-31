@@ -67,9 +67,7 @@ function LocalStorageView(): React.JSX.Element {
 
   return (
     <>
-      <Text style={styles.text}>
-        Current stored value is: {valueLocalStorage ?? 'No Value'}
-      </Text>
+      <Text>Current stored value is: {valueLocalStorage ?? 'No Value'}</Text>
       <Text>Key:</Text>
       <TextInput
         placeholder="Enter the key you want to store"

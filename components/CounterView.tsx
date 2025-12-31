@@ -24,10 +24,8 @@ export const CounterView = () => {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    alignItems: 'center',
   },
   title: {
-    fontSize: 16,
     marginBottom: 8,
     color: 'black',
   },

@@ -2,13 +2,8 @@ import React from 'react';
 import { ScrollView, StyleSheet, Text } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
-import {
-  CounterView,
-  Divider,
-  LocalStorageView,
-  PDFView,
-  SampleModuleView,
-} from './components';
+import { CounterView, Divider, LocalStorageView, PDFView } from './components';
+import { SampleModuleView } from './modules';
 
 function App(): React.JSX.Element {
   return (
@@ -43,7 +38,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   title: {
-    fontSize: 18,
+    fontSize: 20,
     marginBottom: 20,
     textAlign: 'center',
   },

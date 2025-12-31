@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 
-import { Divider } from './';
+import { Divider } from '../components';
 import NativeSampleModule from '../specs/NativeSampleModule';
 
 function SampleModuleView(): React.JSX.Element {
