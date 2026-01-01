@@ -1,76 +1,86 @@
 import { theme } from 'app/Theme';
+import AppText from 'app/ui/AppText';
 import React from 'react';
 import { Alert, StyleSheet, View } from 'react-native';
 
 export const BubblingEventView = () => {
   return (
-    <View
-      id="grandParent"
-      style={styles.container}
-      onTouchStart={e => {
-        const targetId = e.target.id;
-
-        if (targetId === 'child') {
-          console.log('grandParent: event came from CHILD');
-        } else if (targetId === 'sibling') {
-          console.log('grandParent: event came from SIBLING');
-        } else {
-          console.log('grandParent: event came from something else:', targetId);
-        }
-
-        Alert.alert('bubbling event', `targetId: ${String(targetId)}`);
-      }}
-    >
+    <>
+      <AppText variant="sectionTitle" style={styles.title}>
+        Bubbling Event
+      </AppText>
       <View
-        id="parent"
-        style={styles.childContainer}
-        onTouchStart={() => {
-          console.log('parent: received from a child');
+        id="GRAND_PARENT"
+        style={styles.container}
+        onTouchStart={e => {
+          const targetId = e.target.id;
+
+          if (targetId === 'CHILD') {
+            console.log('GRAND_PARENT: event came from CHILD');
+          } else if (targetId === 'SIBLING') {
+            console.log('GRAND_PARENT: event came from SIBLING');
+          } else {
+            console.log(
+              'GRAND_PARENT: event came from something else:',
+              targetId,
+            );
+          }
+
+          Alert.alert('bubbling event', `targetId: ${String(targetId)}`);
         }}
       >
         <View
-          id="sibling"
-          style={[styles.item, styles.itemGreen]}
-          onTouchStart={() => console.log("sibling: I'm emitting")}
-        />
-        <View
-          id="child"
-          style={[styles.item, styles.itemViolet]}
-          onTouchStart={() => console.log("child: I'm emitting")}
-        />
+          id="PARENT"
+          style={styles.childContainer}
+          onTouchStart={() => {
+            console.log('PARENT: received from a CHILD');
+          }}
+        >
+          <View
+            id="SIBLING"
+            style={[styles.item, styles.itemGreen]}
+            onTouchStart={() => console.log("SIBLING: I'm emitting")}
+          />
+          <View
+            id="CHILD"
+            style={[styles.item, styles.itemViolet]}
+            onTouchStart={() => console.log("CHILD: I'm emitting")}
+          />
+        </View>
       </View>
-    </View>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    padding: theme.spacing.md,
-    backgroundColor: theme.colors.surface,
+    backgroundColor: theme.colors.primary,
     borderColor: theme.colors.border,
     borderWidth: 1,
-    borderRadius: theme.radius.md,
     flexDirection: 'column',
+    padding: theme.spacing.sm,
   },
   childContainer: {
-    width: '100%',
-    padding: theme.spacing.md,
-    backgroundColor: theme.colors.background,
+    width: '80%',
+    backgroundColor: theme.colors.danger,
     borderColor: theme.colors.border,
     borderWidth: 1,
-    borderRadius: theme.radius.sm,
+    padding: theme.spacing.sm,
   },
   item: {
     height: 50,
-    width: '100%',
-    borderRadius: theme.radius.sm,
-    marginTop: theme.spacing.sm,
+    width: '70%',
+    borderColor: theme.colors.border,
+    borderWidth: 1,
   },
   itemGreen: {
     backgroundColor: 'lightgreen',
   },
   itemViolet: {
     backgroundColor: 'violet',
+  },
+  title: {
+    marginBottom: theme.spacing.md,
   },
 });

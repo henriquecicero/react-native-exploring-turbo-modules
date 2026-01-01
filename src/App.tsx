@@ -2,7 +2,7 @@ import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
-import { CounterView, PDFView } from 'app/components';
+import { BubblingEventView, CounterView, PDFView } from 'app/components';
 import { LocalStorageView, SampleModuleView } from 'app/modules';
 import { theme } from 'app/Theme';
 import { AppDivider, AppSection, AppText } from 'app/ui';
@@ -17,29 +17,26 @@ function App(): React.JSX.Element {
           showsHorizontalScrollIndicator={false}
         >
           <AppText variant="title" style={styles.title}>
-            React Native TurboModules + Fabric
+            Exploring TurboModules
           </AppText>
-
           <AppSection>
             <SampleModuleView />
           </AppSection>
-
           <AppDivider size={theme.spacing.xl} />
-
           <AppSection>
             <LocalStorageView />
           </AppSection>
-
           <AppDivider size={theme.spacing.xl} />
-
           <AppSection>
             <CounterView />
           </AppSection>
-
           <AppDivider size={theme.spacing.xl} />
-
           <AppSection>
             <PDFView />
+          </AppSection>
+          <AppDivider size={theme.spacing.xl} />
+          <AppSection>
+            <BubblingEventView />
           </AppSection>
         </ScrollView>
       </SafeAreaView>
@@ -63,4 +60,3 @@ const styles = StyleSheet.create({
 });
 
 export default App;
-
