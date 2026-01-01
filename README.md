@@ -1,6 +1,6 @@
 # React Native Exploring TurboModules
 
-A reference for building TurboModules and Fabric components.
+A playground project for exploring TurboModules and Fabric components.
 
 ## Tooling
 
