@@ -60,25 +60,25 @@ React Native's Codegen automates the creation of native interfaces from TypeScri
 
 ### iOS Codegen
 
-- **Automatic:** Runs automatically whenever you run `bundle exec pod install`.
-- **Manual Trigger:**
-  ```sh
-  cd ios
-  bundle exec pod install
-  ```
-  _Run this whenever you modify a spec file in `src/specs/`._
-  _Generated files location:_ `ios/build/generated/ios/`
+Codegen runs automatically during `pod install`. If you modify a spec file, simply re-run:
+
+```sh
+cd ios
+bundle exec pod install
+```
+
+_Generated files location:_ `ios/build/generated/ios/`
 
 ### Android Codegen
 
-- **Automatic:** Runs automatically during the Gradle build phase.
-- **Manual Trigger:**
-  ```sh
-  cd android
-  ./gradlew generateCodegenArtifactsFromSchema
-  ```
-  _Useful for debugging generated Java/Kotlin interfaces without building the full app._
-  _Generated files location:_ `android/app/build/generated/source/codegen/`
+Codegen runs automatically during the build. To generate artifacts without building the full app (useful for debugging):
+
+```sh
+cd android
+./gradlew generateCodegenArtifactsFromSchema
+```
+
+_Generated files location:_ `android/app/build/generated/source/codegen/`
 
 ## Key Native Paths
 
