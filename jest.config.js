@@ -1,6 +1,6 @@
 module.exports = {
   preset: 'react-native',
   moduleNameMapper: {
-    '^app/(.*)$': '<rootDir>/$1',
+    '^app/(.*)$': '<rootDir>/src/$1',
   },
 };

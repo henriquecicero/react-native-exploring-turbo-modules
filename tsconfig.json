@@ -4,9 +4,9 @@
     "types": ["jest"],
     "baseUrl": ".",
     "paths": {
-      "app/*": ["./*"]
+      "app/*": ["./src/*"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "specs/**/*.ts", "specs/**/*.tsx"],
   "exclude": ["**/node_modules", "**/Pods"]
 }

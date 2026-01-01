@@ -84,7 +84,7 @@
 				1DCC84682F028F5200DE1FAD /* NativeSampleModule.cpp */,
 			);
 			name = shared;
-			path = ../shared;
+			path = ../src/shared;
 			sourceTree = SOURCE_ROOT;
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
