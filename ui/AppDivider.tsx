@@ -1,12 +1,15 @@
 import React from 'react';
-import { StyleSheet, View, ViewStyle, StyleProp } from 'react-native';
+import { StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
 
 type DividerProps = {
   size?: number;
   style?: StyleProp<ViewStyle>;
 };
 
-function Divider({ size = 16, style }: DividerProps): React.JSX.Element {
+export default function AppDivider({
+  size = 16,
+  style,
+}: DividerProps): React.JSX.Element {
   return <View style={[styles.divider, { height: size }, style]} />;
 }
 
@@ -17,4 +20,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Divider;

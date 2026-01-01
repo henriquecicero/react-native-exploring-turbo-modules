@@ -2,16 +2,10 @@ import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
-import {
-  AppText,
-  CounterView,
-  Divider,
-  LocalStorageView,
-  PDFView,
-  Section,
-} from 'app/components';
+import { CounterView, LocalStorageView, PDFView } from 'app/components';
 import { SampleModuleView } from 'app/modules';
 import { theme } from 'app/Theme';
+import { AppDivider, AppSection, AppText } from 'app/ui';
 
 function App(): React.JSX.Element {
   return (
@@ -26,27 +20,27 @@ function App(): React.JSX.Element {
             React Native TurboModules + Fabric
           </AppText>
 
-          <Section>
+          <AppSection>
             <SampleModuleView />
-          </Section>
+          </AppSection>
 
-          <Divider size={theme.spacing.xl} />
+          <AppDivider size={theme.spacing.xl} />
 
-          <Section>
+          <AppSection>
             <LocalStorageView />
-          </Section>
+          </AppSection>
 
-          <Divider size={theme.spacing.xl} />
+          <AppDivider size={theme.spacing.xl} />
 
-          <Section>
+          <AppSection>
             <CounterView />
-          </Section>
+          </AppSection>
 
-          <Divider size={theme.spacing.xl} />
+          <AppDivider size={theme.spacing.xl} />
 
-          <Section>
+          <AppSection>
             <PDFView />
-          </Section>
+          </AppSection>
         </ScrollView>
       </SafeAreaView>
     </SafeAreaProvider>

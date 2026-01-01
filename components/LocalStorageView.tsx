@@ -7,8 +7,8 @@ import {
 } from 'react-native';
 
 import { theme } from 'app/Theme';
-import { AppButton, AppText, AppTextInput, Divider } from 'app/components';
-import NativeLocalStorage from 'app/specs/NativeLocalStorage';
+import { AppButton, AppDivider, AppText, AppTextInput } from 'app/ui';
+import { NativeLocalStorage } from 'app/specs';
 
 const EMPTY = '<empty>';
 
@@ -74,7 +74,7 @@ function LocalStorageView(): React.JSX.Element {
         Current value: {valueLocalStorage ?? 'No Value'}
       </AppText>
 
-      <Divider size={theme.spacing.md} />
+      <AppDivider size={theme.spacing.md} />
 
       <AppText variant="label" style={styles.label}>
         Key

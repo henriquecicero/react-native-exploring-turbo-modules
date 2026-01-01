@@ -8,10 +8,8 @@ import {
 } from 'react-native';
 
 import { theme } from 'app/Theme';
-import { AppButton, AppText } from 'app/components';
-import NativePDFViewNative, {
-  type NativeProps as NativePDFViewProps,
-} from 'app/specs/NativePDFView';
+import { AppButton, AppText } from 'app/ui';
+import { NativePDFView, type NativePDFViewProps } from 'app/specs';
 
 export type PDFViewProps = {
   sourceURL?: string;
@@ -78,7 +76,7 @@ function PDFView({
           />
         </View>
       </View>
-      <NativePDFViewNative style={styles.pdfView} {...nativeProps} />
+      <NativePDFView style={styles.pdfView} {...nativeProps} />
     </View>
   );
 }

@@ -1,6 +1,6 @@
 import { Alert, StyleSheet, View } from 'react-native';
-import NativeWebView from 'app/specs/NativeWebView';
 import { theme } from 'app/Theme';
+import { NativeWebView } from 'app/specs';
 
 export const WebView = () => {
   return (

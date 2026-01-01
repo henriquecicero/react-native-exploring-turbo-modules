@@ -1,8 +1,8 @@
+import { theme } from 'app/Theme';
 import React from 'react';
 import { Alert, StyleSheet, View } from 'react-native';
-import { theme } from 'app/Theme';
 
-export const BubblingEvent = () => {
+export const BubblingEventView = () => {
   return (
     <View
       id="grandParent"

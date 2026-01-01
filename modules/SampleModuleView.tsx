@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { AppButton, AppText, AppTextInput, Divider } from 'app/components';
-import NativeSampleModule from 'app/specs/NativeSampleModule';
+import { AppButton, AppDivider, AppText, AppTextInput } from 'app/ui';
 import { theme } from 'app/Theme';
+import { NativeSampleModule } from 'app/specs';
 
 function SampleModuleView(): React.JSX.Element {
   const [value, setValue] = React.useState('');
@@ -54,7 +54,7 @@ function SampleModuleView(): React.JSX.Element {
       </View>
       <AppText variant="caption">Reversed: {reversedValue || '—'}</AppText>
 
-      <Divider size={theme.spacing.xl} />
+      <AppDivider size={theme.spacing.xl} />
 
       <AppText variant="label" style={styles.label}>
         Cubic root
@@ -75,7 +75,7 @@ function SampleModuleView(): React.JSX.Element {
       </View>
       <AppText variant="caption">Result: {String(cubicRoot)}</AppText>
 
-      <Divider size={theme.spacing.xl} />
+      <AppDivider size={theme.spacing.xl} />
 
       <AppText variant="label" style={styles.label}>
         Address street

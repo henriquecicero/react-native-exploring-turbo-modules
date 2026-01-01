@@ -3,9 +3,9 @@ import { StyleSheet, View, type ViewProps } from 'react-native';
 
 import { theme } from 'app/Theme';
 
-export type SectionProps = ViewProps;
+export type AppSectionProps = ViewProps;
 
-export default function Section({ style, ...props }: SectionProps) {
+export default function AppSection({ style, ...props }: AppSectionProps) {
   return <View style={[styles.container, style]} {...props} />;
 }
 
@@ -19,3 +19,4 @@ const styles = StyleSheet.create({
     padding: theme.spacing.lg,
   },
 });
+
