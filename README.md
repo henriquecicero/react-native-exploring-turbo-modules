@@ -1,21 +1,24 @@
-# react-native-exploring-turbo-modules
+# React Native Exploring TurboModules
 
 A reference for building TurboModules and Fabric components.
 
-## Tooling & Versions
+## Tooling
 
 At the moment my environment matches these requirements:
 
-| Tool            | Version             | Check Command              |
-| --------------- | ------------------- | -------------------------- |
-| **Node.js**     | 20.19.4             | `node -v`                  |
-| **Ruby**        | 3.2.9               | `ruby -v`                  |
-| **JDK**         | 17.0.10             | `javac -version`           |
-| **Android SDK** | 36 (UpsideDownCake) | Android Studio SDK Manager |
-| **Xcode**       | 26.2                | `xcodebuild -version`      |
-| **CocoaPods**   | 1.16.2              | `pod --version`            |
+| Tool            | Version | Check Command                 |
+| --------------- | ------- | ----------------------------- |
+| **Node.js**     | 20.19.4 | `node -v`                     |
+| **Ruby**        | 3.2.9   | `ruby -v`                     |
+| **JDK**         | 17.0.10 | `javac -version`              |
+| **Android SDK** | 36.0.0  | `sdkmanager --list_installed` |
+| **CMake**       | 3.13    | `cmake --version`             |
+| **Xcode**       | 26.2    | `xcodebuild -version`         |
+| **CocoaPods**   | 1.16.2  | `pod --version`               |
 
-## Installation & Runing
+> **Note:** if sdkmanager isn't in your PATH or throws a Java error, you can often find the working version here: `$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --list_installed`
+
+## Setup and Running
 
 **Install JS dependencies:**
 
@@ -84,10 +87,10 @@ React Native's Codegen automates the creation of native interfaces from TypeScri
 | **iOS**     | `ios/*.{h,mm,swift}`                             | `ios/build/generated/ios/`     |
 | **Android** | `android/app/src/main/java/com/sampleapp/specs/` | `android/app/build/generated/` |
 
-## Common Pitfalls
+## Pitfalls
 
 - **Spec Changes:** If you change a `.ts` spec file, you **MUST** re-run `pod install` (iOS) or rebuild (Android) to update the native interfaces.
-- **Clean Build:** When in doubt, clean:
-  - iOS: `rm -rf ios/build ~/Library/Developer/Xcode/DerivedData`
-  - Android: `cd android && ./gradlew clean`
-- **Java Version:** Ensure `JAVA_HOME` points to JDK 17. Check with `echo $JAVA_HOME`.
+
+## Documentation
+
+Everything covered here is well explained in the official docs: [Native Platform](https://reactnative.dev/docs/native-platform)
