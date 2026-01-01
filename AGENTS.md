@@ -7,7 +7,7 @@ This is a **exploration project** for React Native's new architecture, specifica
 - **TurboModules**: The new native module system that provides synchronous, type-safe communication between JavaScript and native code (replacing the legacy NativeModules bridge).
 - **Fabric Components**: The new rendering system for creating native UI components with direct, synchronous access from React.
 
-The project serves as a reference implementation demonstrating how to build and integrate custom native modules and components using React Native 0.83's codegen system.
+The project serves as a reference implementation demonstrating how to build and integrate custom native modules and components using React Native codegen system.
 
 ## Languages & Technologies
 
@@ -71,15 +71,15 @@ src/
 ├── modules/                   # UI demos for TurboModules
 │   ├── LocalStorageView.tsx
 │   └── SampleModuleView.tsx
-└── shared/                    # Shared C++ code (optional)
+└── shared/                    # Shared C++ code
 
 ios/                           # iOS native implementations
-├── RCTNative*.h/.mm          # Fabric component implementations
-├── Native*Provider.h/.mm     # TurboModule providers
-└── *.swift                   # Swift implementations
+├── RCTNative*.h/.mm           # Fabric component implementations
+├── Native*Provider.h/.mm      # TurboModule providers
+└── *.swift                    # Swift implementations
 
-android/app/src/main/java/    # Android native implementations
-└── com/sampleapp/specs/      # Kotlin TurboModules & Fabric components
+android/app/src/main/java/     # Android native implementations
+└── com/sampleapp/specs/       # Kotlin TurboModules & Fabric components
 ```
 
 ## Codegen Workflow
