@@ -36,7 +36,7 @@ cd ios && bundle exec pod install && cd ..
 > **Note:** `pod install` triggers the **Codegen** for iOS. It reads specs from `src/specs/` and generates ObjC++ headers in `ios/build/generated/`.
 
 **Start Metro**
-Keep this running in a separate terminal:
+keep this running in a separate terminal:
 
 ```sh
 yarn start
@@ -100,9 +100,10 @@ Everything covered here is well explained in the official docs: [Native Platform
 `NativeSampleModule` is a C++ TurboModule demonstrating shared logic across iOS and Android.
 
 **1. The Spec (`src/specs/NativeSampleModule.ts`)**
-Defines the JS interface using TypeScript. Codegen uses this to generate the C++ base class `NativeSampleModuleCxxSpec`.
+defines the JS interface using TypeScript. Codegen uses this to generate the C++ base class `NativeSampleModuleCxxSpec`.
 
 _Generated location:_
+
 - **iOS**: `ios/build/generated/ios/AppSpecsJSI.h`
 - **Android**: `android/app/build/generated/source/codegen/jni/AppSpecs.h`
 
@@ -115,7 +116,7 @@ export interface Spec extends TurboModule {
 ```
 
 **2. The Header (`src/shared/NativeSampleModule.h`)**
-Inherits from the generated `NativeSampleModuleCxxSpec`. Note how we use `jsi::Runtime` and standard C++ types.
+inherits from the generated `NativeSampleModuleCxxSpec`. Note how we use `jsi::Runtime` and standard C++ types.
 
 ```cpp
 class NativeSampleModule : public NativeSampleModuleCxxSpec<NativeSampleModule> {
@@ -128,10 +129,10 @@ public:
 ```
 
 **3. The Implementation (`src/shared/NativeSampleModule.cpp`)**
-Implements the logic using standard C++ libraries (`<algorithm>`, `<cmath>`). This code is compiled by both Android (via NDK/CMake) and iOS (via Xcode), ensuring identical behavior on both platforms.
+implements the logic using standard C++ libraries (`<algorithm>`, `<cmath>`). This code is compiled by both Android (via NDK/CMake) and iOS (via Xcode), ensuring identical behavior on both platforms.
 
 ```cpp
 std::string NativeSampleModule::reverseString(jsi::Runtime& rt, std::string input) {
-  return std::string(input.rbegin(), input.rend()); // Standard C++ string reversal
+  return std::string(input.rbegin(), input.rend());
 }
 ```
