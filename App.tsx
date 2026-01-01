@@ -2,8 +2,8 @@ import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
-import { CounterView, LocalStorageView, PDFView } from 'app/components';
-import { SampleModuleView } from 'app/modules';
+import { CounterView, PDFView } from 'app/components';
+import { LocalStorageView, SampleModuleView } from 'app/modules';
 import { theme } from 'app/Theme';
 import { AppDivider, AppSection, AppText } from 'app/ui';
 

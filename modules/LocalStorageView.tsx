@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  Alert,
-  StyleSheet,
-  View,
-  type EventSubscription,
-} from 'react-native';
+import { Alert, StyleSheet, View, type EventSubscription } from 'react-native';
 
 import { theme } from 'app/Theme';
 import { AppButton, AppDivider, AppText, AppTextInput } from 'app/ui';
@@ -124,3 +119,4 @@ const styles = StyleSheet.create({
 });
 
 export default LocalStorageView;
+
