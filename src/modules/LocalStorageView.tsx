@@ -1,9 +1,9 @@
 import React from 'react';
 import { Alert, StyleSheet, View, type EventSubscription } from 'react-native';
 
+import { NativeLocalStorage } from 'app/specs';
 import { theme } from 'app/Theme';
 import { AppButton, AppDivider, AppText, AppTextInput } from 'app/ui';
-import { NativeLocalStorage } from 'app/specs';
 
 const EMPTY = '<empty>';
 
@@ -66,7 +66,7 @@ function LocalStorageView(): React.JSX.Element {
       </AppText>
 
       <AppText variant="caption" style={styles.caption}>
-        Current value: {valueLocalStorage ?? 'No Value'}
+        Current value: {valueLocalStorage ?? 'no value stored'}
       </AppText>
 
       <AppDivider size={theme.spacing.md} />
@@ -90,13 +90,13 @@ function LocalStorageView(): React.JSX.Element {
         <AppButton title="Save" onPress={saveValue} />
       </View>
       <View style={styles.buttonSpacing}>
-        <AppButton variant="secondary" title="Retrieve" onPress={retrieveValue} />
+        <AppButton title="Retrieve" onPress={retrieveValue} />
       </View>
       <View style={styles.buttonSpacing}>
         <AppButton variant="danger" title="Delete" onPress={deleteValue} />
       </View>
       <View style={styles.buttonSpacing}>
-        <AppButton variant="secondary" title="Clear All" onPress={clearAll} />
+        <AppButton variant="danger" title="Clear All" onPress={clearAll} />
       </View>
     </View>
   );

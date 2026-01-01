@@ -7,9 +7,9 @@ import {
   type ViewStyle,
 } from 'react-native';
 
+import { NativePDFView, type NativePDFViewProps } from 'app/specs';
 import { theme } from 'app/Theme';
 import { AppButton, AppText } from 'app/ui';
-import { NativePDFView, type NativePDFViewProps } from 'app/specs';
 
 export type PDFViewProps = {
   sourceURL?: string;
@@ -60,7 +60,6 @@ function PDFView({
       <View style={styles.pdfControls}>
         <View style={styles.controlButton}>
           <AppButton
-            variant="secondary"
             title="Prev"
             onPress={() => setPage(Math.max(0, page - 1))}
           />

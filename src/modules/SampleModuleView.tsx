@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { AppButton, AppDivider, AppText, AppTextInput } from 'app/ui';
 import { theme } from 'app/Theme';
 import { NativeSampleModule } from 'app/specs';
+import { AppButton, AppDivider, AppText, AppTextInput } from 'app/ui';
 
 function SampleModuleView(): React.JSX.Element {
   const [value, setValue] = React.useState('');
@@ -66,7 +66,6 @@ function SampleModuleView(): React.JSX.Element {
       />
       <View style={styles.buttonRow}>
         <AppButton
-          variant="secondary"
           title="Get Cubic Root"
           onPress={() =>
             setCubicRoot(NativeSampleModule.cubicRoot(cubicSource))
@@ -88,11 +87,7 @@ function SampleModuleView(): React.JSX.Element {
       <AppText variant="label" style={styles.label}>
         Address number
       </AppText>
-      <AppTextInput
-        placeholder="Number"
-        onChangeText={setNum}
-        value={num}
-      />
+      <AppTextInput placeholder="Number" onChangeText={setNum} value={num} />
       <View style={styles.buttonRow}>
         <AppButton title="Validate" onPress={onPressValidateAddress} />
       </View>
