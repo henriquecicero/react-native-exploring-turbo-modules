@@ -1,5 +1,6 @@
 import React from 'react';
 import { Alert, StyleSheet, View } from 'react-native';
+import { theme } from 'app/Theme';
 
 export const BubblingEvent = () => {
   return (
@@ -44,17 +45,27 @@ export const BubblingEvent = () => {
 
 const styles = StyleSheet.create({
   container: {
-    width: '95%',
-    backgroundColor: 'lightgrey',
+    width: '100%',
+    padding: theme.spacing.md,
+    backgroundColor: theme.colors.surface,
+    borderColor: theme.colors.border,
+    borderWidth: 1,
+    borderRadius: theme.radius.md,
     flexDirection: 'column',
   },
   childContainer: {
-    width: '80%',
-    backgroundColor: 'lightblue',
+    width: '100%',
+    padding: theme.spacing.md,
+    backgroundColor: theme.colors.background,
+    borderColor: theme.colors.border,
+    borderWidth: 1,
+    borderRadius: theme.radius.sm,
   },
   item: {
     height: 50,
-    width: '80%',
+    width: '100%',
+    borderRadius: theme.radius.sm,
+    marginTop: theme.spacing.sm,
   },
   itemGreen: {
     backgroundColor: 'lightgreen',

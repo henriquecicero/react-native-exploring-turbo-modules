@@ -1,5 +1,6 @@
 import { Alert, StyleSheet, View } from 'react-native';
-import NativeWebView from '../specs/NativeWebView';
+import NativeWebView from 'app/specs/NativeWebView';
+import { theme } from 'app/Theme';
 
 export const WebView = () => {
   return (
@@ -17,12 +18,14 @@ export const WebView = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    alignContent: 'center',
+    width: '100%',
+    borderRadius: theme.radius.md,
+    borderColor: theme.colors.border,
+    borderWidth: 1,
+    overflow: 'hidden',
   },
   webview: {
     width: '100%',
-    height: '100%',
+    height: 360,
   },
 });

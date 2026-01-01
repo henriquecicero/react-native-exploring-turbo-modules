@@ -1,15 +1,14 @@
 import React from 'react';
 import {
   Alert,
-  Button,
   StyleSheet,
-  Text,
-  TextInput,
   View,
   type EventSubscription,
 } from 'react-native';
 
-import NativeLocalStorage from '../specs/NativeLocalStorage';
+import { theme } from 'app/Theme';
+import { AppButton, AppText, AppTextInput, Divider } from 'app/components';
+import NativeLocalStorage from 'app/specs/NativeLocalStorage';
 
 const EMPTY = '<empty>';
 
@@ -66,51 +65,61 @@ function LocalStorageView(): React.JSX.Element {
   }
 
   return (
-    <>
-      <Text>Current stored value is: {valueLocalStorage ?? 'No Value'}</Text>
-      <Text>Key:</Text>
-      <TextInput
+    <View>
+      <AppText variant="sectionTitle" style={styles.sectionTitle}>
+        Native Local Storage
+      </AppText>
+
+      <AppText variant="caption" style={styles.caption}>
+        Current value: {valueLocalStorage ?? 'No Value'}
+      </AppText>
+
+      <Divider size={theme.spacing.md} />
+
+      <AppText variant="label" style={styles.label}>
+        Key
+      </AppText>
+      <AppTextInput
         placeholder="Enter the key you want to store"
-        style={styles.textInput}
         onChangeText={setKey}
       />
-      <Text>Value:</Text>
-      <TextInput
+      <AppText variant="label" style={styles.label}>
+        Value
+      </AppText>
+      <AppTextInput
         placeholder="Enter the text you want to store"
-        style={styles.textInput}
         onChangeText={setEditingValue}
       />
+
       <View style={styles.buttonSpacing}>
-        <Button title="Save" onPress={saveValue} />
+        <AppButton title="Save" onPress={saveValue} />
       </View>
       <View style={styles.buttonSpacing}>
-        <Button title="Retrieve" onPress={retrieveValue} />
+        <AppButton variant="secondary" title="Retrieve" onPress={retrieveValue} />
       </View>
       <View style={styles.buttonSpacing}>
-        <Button title="Delete" onPress={deleteValue} />
+        <AppButton variant="danger" title="Delete" onPress={deleteValue} />
       </View>
       <View style={styles.buttonSpacing}>
-        <Button title="Clear" onPress={clearAll} />
+        <AppButton variant="secondary" title="Clear All" onPress={clearAll} />
       </View>
-    </>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  textInput: {
-    borderColor: 'black',
-    borderWidth: 1,
-    borderRadius: 5,
-    padding: 10,
-    marginTop: 10,
-    marginBottom: 10,
+  sectionTitle: {
+    marginBottom: theme.spacing.md,
   },
-  text: {
-    marginTop: 10,
-    fontSize: 20,
+  caption: {
+    marginBottom: theme.spacing.sm,
+  },
+  label: {
+    marginTop: theme.spacing.md,
+    marginBottom: theme.spacing.xs,
   },
   buttonSpacing: {
-    marginBottom: 10,
+    marginTop: theme.spacing.md,
   },
 });
 

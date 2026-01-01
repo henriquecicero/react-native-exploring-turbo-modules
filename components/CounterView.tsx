@@ -1,13 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import NativeCounterView from '../specs/NativeCounterView';
+import { StyleSheet, View } from 'react-native';
+import NativeCounterView from 'app/specs/NativeCounterView';
+import { theme } from 'app/Theme';
+import AppText from 'app/components/ui/AppText';
 
 export const CounterView = () => {
   const [count, setCount] = React.useState(0);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Native Counter</Text>
+      <AppText variant="sectionTitle" style={styles.title}>
+        Native Counter
+      </AppText>
       <NativeCounterView
         style={styles.counter}
         label="Tap to increment"
@@ -16,7 +20,9 @@ export const CounterView = () => {
           setCount(event.nativeEvent.count);
         }}
       />
-      <Text style={styles.caption}>JS count: {count}</Text>
+      <AppText variant="caption" style={styles.caption}>
+        JS count: {count}
+      </AppText>
     </View>
   );
 };
@@ -26,15 +32,13 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   title: {
-    marginBottom: 8,
-    color: 'black',
+    marginBottom: theme.spacing.md,
   },
   counter: {
     width: '100%',
     height: 80,
   },
   caption: {
-    marginTop: 8,
-    color: 'black',
+    marginTop: theme.spacing.md,
   },
 });

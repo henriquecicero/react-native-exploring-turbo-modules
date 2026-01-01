@@ -1,17 +1,17 @@
 import React from 'react';
 import {
   Alert,
-  Button,
   StyleSheet,
-  Text,
   View,
   type StyleProp,
   type ViewStyle,
 } from 'react-native';
 
+import { theme } from 'app/Theme';
+import { AppButton, AppText } from 'app/components';
 import NativePDFViewNative, {
   type NativeProps as NativePDFViewProps,
-} from '../specs/NativePDFView';
+} from 'app/specs/NativePDFView';
 
 export type PDFViewProps = {
   sourceURL?: string;
@@ -53,20 +53,30 @@ function PDFView({
 
   return (
     <View style={[styles.container, style]}>
-      <Text>Native PDF</Text>
-      <Text style={styles.caption}>
+      <AppText variant="sectionTitle" style={styles.title}>
+        Native PDF
+      </AppText>
+      <AppText variant="caption" style={styles.caption}>
         Page: {page + 1} / {pageCount || '...'}
-      </Text>
+      </AppText>
       <View style={styles.pdfControls}>
-        <Button title="Prev" onPress={() => setPage(Math.max(0, page - 1))} />
-        <Button
-          title="Next"
-          onPress={() =>
-            setPage(
-              pageCount > 0 ? Math.min(pageCount - 1, page + 1) : page + 1,
-            )
-          }
-        />
+        <View style={styles.controlButton}>
+          <AppButton
+            variant="secondary"
+            title="Prev"
+            onPress={() => setPage(Math.max(0, page - 1))}
+          />
+        </View>
+        <View style={styles.controlButton}>
+          <AppButton
+            title="Next"
+            onPress={() =>
+              setPage(
+                pageCount > 0 ? Math.min(pageCount - 1, page + 1) : page + 1,
+              )
+            }
+          />
+        </View>
       </View>
       <NativePDFViewNative style={styles.pdfView} {...nativeProps} />
     </View>
@@ -77,22 +87,27 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
   },
+  title: {
+    marginBottom: theme.spacing.xs,
+  },
   caption: {
-    marginTop: 6,
     marginBottom: 8,
   },
   pdfControls: {
     width: '100%',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    gap: theme.spacing.md,
     marginBottom: 8,
+  },
+  controlButton: {
+    flex: 1,
   },
   pdfView: {
     width: '100%',
     height: 360,
     borderRadius: 12,
     borderWidth: 1,
-    borderColor: '#222',
+    borderColor: theme.colors.border,
     overflow: 'hidden',
   },
 });

@@ -1,8 +1,9 @@
 import React from 'react';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import { Divider } from '../components';
-import NativeSampleModule from '../specs/NativeSampleModule';
+import { AppButton, AppText, AppTextInput, Divider } from 'app/components';
+import NativeSampleModule from 'app/specs/NativeSampleModule';
+import { theme } from 'app/Theme';
 
 function SampleModuleView(): React.JSX.Element {
   const [value, setValue] = React.useState('');
@@ -36,63 +37,84 @@ function SampleModuleView(): React.JSX.Element {
 
   return (
     <View>
-      <Text>Write down here the text you want to reverse</Text>
-      <TextInput
-        style={styles.textInput}
+      <AppText variant="sectionTitle" style={styles.sectionTitle}>
+        Sample TurboModule
+      </AppText>
+
+      <AppText variant="label" style={styles.label}>
+        Text to reverse
+      </AppText>
+      <AppTextInput
         placeholder="Write your text here"
         onChangeText={setValue}
         value={value}
       />
-      <Button title="Reverse" onPress={onPressReverse} />
-      <Text>Reversed text: {reversedValue}</Text>
+      <View style={styles.buttonRow}>
+        <AppButton title="Reverse" onPress={onPressReverse} />
+      </View>
+      <AppText variant="caption">Reversed: {reversedValue || '—'}</AppText>
 
-      <Divider size={24} />
+      <Divider size={theme.spacing.xl} />
 
-      <Text>For which number do you want to compute the Cubic Root?</Text>
-      <TextInput
-        style={styles.textInput}
-        placeholder="Write your text here"
+      <AppText variant="label" style={styles.label}>
+        Cubic root
+      </AppText>
+      <AppTextInput
+        placeholder="Enter a number"
         onChangeText={setCubicSource}
         value={cubicSource}
       />
-      <Button
-        title="Get Cubic Root"
-        onPress={() => setCubicRoot(NativeSampleModule.cubicRoot(cubicSource))}
-      />
-      <Text>The cubic root is: {cubicRoot}</Text>
+      <View style={styles.buttonRow}>
+        <AppButton
+          variant="secondary"
+          title="Get Cubic Root"
+          onPress={() =>
+            setCubicRoot(NativeSampleModule.cubicRoot(cubicSource))
+          }
+        />
+      </View>
+      <AppText variant="caption">Result: {String(cubicRoot)}</AppText>
 
-      <Divider size={24} />
+      <Divider size={theme.spacing.xl} />
 
-      <Text>Address:</Text>
-      <TextInput
-        style={styles.textInput}
-        placeholder="Write your address here"
+      <AppText variant="label" style={styles.label}>
+        Address street
+      </AppText>
+      <AppTextInput
+        placeholder="Street"
         onChangeText={setStreet}
         value={street}
       />
-      <Text>Number:</Text>
-      <TextInput
-        style={styles.textInput}
-        placeholder="Write your address here"
+      <AppText variant="label" style={styles.label}>
+        Address number
+      </AppText>
+      <AppTextInput
+        placeholder="Number"
         onChangeText={setNum}
         value={num}
       />
-      <Button title="Validate" onPress={onPressValidateAddress} />
+      <View style={styles.buttonRow}>
+        <AppButton title="Validate" onPress={onPressValidateAddress} />
+      </View>
       {isValidAddress != null && (
-        <Text>Your address is {isValidAddress ? 'valid' : 'not valid'}</Text>
+        <AppText variant="caption">
+          Your address is {isValidAddress ? 'valid' : 'not valid'}
+        </AppText>
       )}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  textInput: {
-    borderColor: 'black',
-    borderWidth: 1,
-    borderRadius: 5,
-    padding: 10,
-    marginTop: 10,
-    marginBottom: 10,
+  sectionTitle: {
+    marginBottom: theme.spacing.md,
+  },
+  label: {
+    marginTop: theme.spacing.md,
+    marginBottom: theme.spacing.xs,
+  },
+  buttonRow: {
+    marginTop: theme.spacing.md,
   },
 });
 
